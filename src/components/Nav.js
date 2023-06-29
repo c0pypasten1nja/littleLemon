@@ -1,15 +1,33 @@
-function Nav() {
-    return (
-      <nav>
-        <a>Home</a>
-        <a>About</a>
-        <a>Menu</a>
-        <a>Reservations</a>
-        <a>Order Online</a>
-        <a>Login</a>
-      </nav>
-    );
-  }
+import NavLogo from "./assets/NavLogo.svg";
 
-  export default Nav;
-  
+function Nav() {
+  return (
+    <nav>
+      <span>
+        <img src={NavLogo} alt="Little Lemon Logo" />
+      </span>
+      <ul>
+        <li>
+          <a>Home</a>
+        </li>
+        <li>
+          <a>About</a>
+        </li>
+        <li>
+          <a>Menu</a>
+        </li>
+        <li>
+          <a>Reservations</a>
+        </li>
+        <li>
+          <a>Order Online</a>
+        </li>
+        <li>
+          <a>Login</a>
+        </li>
+      </ul>
+    </nav>
+  );
+}
+
+export default Nav;
