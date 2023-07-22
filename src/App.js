@@ -1,7 +1,7 @@
 import './App.css';
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
-import Routing from "./components/Routing";
+import Main from "./components/Main";
 import Footer from "./components/Footer";
 import { Helmet } from 'react-helmet';
 import MarioAdrian from "./assets/Mario and Adrian A.jpg";
@@ -22,7 +22,7 @@ function App() {
       <div class="container">
         <Header />
         <NavBar />
-        <Routing />
+        <Main />
         <Footer />
       </div>
 
