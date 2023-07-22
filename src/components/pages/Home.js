@@ -24,7 +24,7 @@ export default function Home() {
                     <p>A family-owned Mediterranean restaurant in Chicago, Illinois, serving traditional recipes with a modern
                         twist.
                     </p>
-                    <Link to="/reservations" class="btn">Book a Table</Link>
+                    <Link aria-label="On Click" to="/reservations" class="btn">Book a Table</Link>
                 </div>
                 <div class="hero-image">
                     <img src={HeroImg} alt="Little Lemon Restaurant"></img>
