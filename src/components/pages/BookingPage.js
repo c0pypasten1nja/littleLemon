@@ -10,7 +10,7 @@ const BookingPage = (props) => {
                 <img src={Bruchetta} alt="bruchetta" />
                 <h1>Table Reservations</h1>
             </header>
-            <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch}/>
+            <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch} submitForm={props.submitForm}/>
         </div>
     );
 };

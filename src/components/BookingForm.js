@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const BookingForm = (props) => {
 
-  const navigate = useNavigate();
   const [reservationData, setReservationData] = useState({
     firstName: '',
     lastName: '',
@@ -29,14 +27,14 @@ const BookingForm = (props) => {
   const handleDateChange = (e) => {
     setDate(e);
     props.dispatch(e);
-   }
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
 
     // Redirect to the reservations submitted page
-    navigate('/reservation-submitted');
+    props.submitForm(e);
   };
 
   const {
@@ -108,23 +106,19 @@ const BookingForm = (props) => {
         onChange={(e) => setTimes(e.target.value)}
         required
       >
-        <option>17:00</option>
-        <option>18:00</option>
-        <option>19:00</option>
-        <option>20:00</option>
-        <option>21:00</option>
-        <option>22:00</option>
+        <option value="">Select a Time</option>
+        {props.availableTimes.availableTimes.map(availableTimes => {return <option key={availableTimes}>{availableTimes}</option>})}
       </select>
 
-      <label htmlFor="guests">Number of guests</label>
+      <label htmlFor="guests">Number of guests (Max:10)</label>
       <input
         type="number"
         min="1"
         max="10"
-        placeholder={1}
         id="guests"
+        name="guests"
         value={guests}
-        onChange={(e) => {setGuests(e.target.value)}}
+        onChange={(e) => setGuests(e.target.value)}
         required
       />
 
@@ -166,18 +160,18 @@ const BookingForm = (props) => {
       ></textarea>
 
       <button type="submit" disabled={
-                !firstName ||
-                !lastName ||
-                !email ||
-                !phoneNumber ||
-                !guests ||
-                !date ||
-                !times ||
-                !occasion ||
-                !seatingPreferences
-              } > Make Your Reservation  
-              </button>
-      <br/>
+        !firstName ||
+        !lastName ||
+        !email ||
+        !phoneNumber ||
+        !guests ||
+        !date ||
+        !times ||
+        !occasion ||
+        !seatingPreferences
+      } > Make Your Reservation
+      </button>
+      <br />
     </form>
   );
 };
